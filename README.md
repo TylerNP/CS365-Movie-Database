@@ -4,7 +4,7 @@
 
 Tyler Pham (tpham127@calpoly.edu)   
 Venkata G. Ande (vande@calpoly.edu)      
-Dionne Gregorio (Drgregor@calpoly.edu)         
+Dionne Gregorio (drgregor@calpoly.edu)         
 Taran Singh (tsingh33@calpoly.edu)
 
 ## Description
