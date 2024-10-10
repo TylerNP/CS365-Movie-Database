@@ -9,7 +9,7 @@
 7) “I am a film producer, and (name of our project) allows me to see which movie genres are doing well. They provide the metrics by user rating, critic reception, and budget to box-office earnings. This helps me to see which projects to invest in next.” (get movie data (analytics))
 8) As a new movie person, I want to search based on other metrics that aren't the title. (e.g. genre, actor, director, etc.) (advanced search)
 9) As a movie enjoyer on a budget, I want to filter by free to watch movies (return movies that have sources that are free) (or if I have netflix, I want it to show me movies that are on netflix)
-10) As Frances, I want to organize movies, so I can find what I have already watched and plan on what I movies I want to watch next (add watch history)
+10) As Frances, I want to organize movies, so I can find what I have already watched and plan on what I movies I want to watch next (add watch history) 
 11) As a person trying to learn a new language, I want to find movies that are in that said langauge (search by goal)
 12) As a fan of __ (movie series/direcor/actor) I want updates when there new movies that meet these criterias (notifications)
 13) I want people to know what my all time favorite films are so I want to set my all time favorite films are.
