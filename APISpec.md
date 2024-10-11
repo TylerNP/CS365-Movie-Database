@@ -1,4 +1,43 @@
 # CSC365 Movie Databases 
+### API Specification
+
+## Users
+### `/users/signup` (POST)
+Create new user. <br />
+
+**Request**:
+
+```json
+{
+  "name": "string",
+  "password": "string" 
+}
+```
+**Response**:
+
+```json
+{
+  "id": "integer"
+}
+```
+### `/users/login` (POST)
+Login existing user. <br />
+
+**Request**:
+
+```json
+{
+  "name": "string",
+  "password": "string"
+}
+```
+**Response**:
+
+```json
+{
+  "id": "integer"
+}
+```
 
 # Taran
 3) As a user I want to rate movies as I like them or don’t like them, so that i can get recommendations of what other movies I might like   (rate movies)
