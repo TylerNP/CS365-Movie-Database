@@ -39,6 +39,25 @@ Login existing user. <br />
 }
 ```
 
+### `/users/{id}/list/{movie_id}/rate/}` (POST)
+Rate a movie. <br />
+
+**Request**:
+
+```json
+{
+  "rating": "integer" /*rating from 0 to 10*/
+}
+```
+**Response**:
+
+```json
+{
+  "success": "boolean"
+}
+```
+
+
 ## Catalog
 ### Get Catalog - `/catalog` (GET)
 Retrieves the catalog of movies. Each movie will only have one unique entry. <br />
@@ -181,11 +200,6 @@ Finds more movies to recommend to a user <br />
 2.1 Rate user
 
 
-
-# 3 stories 
-
-# Taran
-3) As a user I want to rate movies as I like them or don’t like them, so that i can get recommendations of what other movies I might like   (rate movies)
 
 5) “As a user of (name of our project), I want to determine which upcoming movies will do well based on the movies I’ve liked. I’m a college student so time and money are limited and I’d want to pick the best possible choice.” (give rec. based on liked and not liked movies)
 GET collabs /recommend/collabs
