@@ -13,3 +13,6 @@ Jane, a user who wants to see a movie but doesn’t know the movie title, wants 
 She first signs up with a POST request to `/users/signup`. She then searches for the director’s movies with a GET request to `/attributes/:director`. She then looks at one she likes with a GET request to /`movies/:id`.
 She now has all the info she needs to watch the movie.
 
+### RECOMMENDATION FEATURE
+Kade Cabrera visits our website because she wants to find other movies based off of her likes and dislikes. First, Kade requests the catalog of movies she has watched with `/catalog/movies`. Kade rates movie, A, on her account with a POST request to `/users/{id}/list/{movie_id}/{rating}` with a like and movie, B, with disklike. Kade then receives recommendations with a GET `/recommend/{id}`
+    - 

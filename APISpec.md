@@ -39,6 +39,46 @@ Login existing user. <br />
 }
 ```
 
+## Catalog
+### Get Catalog - `/catalog` (GET)
+Retrieves the catalog of movies. Each movie will only have one unique entry. <br />
+
+**Response**:
+
+```json
+[
+    {
+        "movie_id": "integer",
+        "name": "string",
+        "director": "string",
+        "release_year": "integer",
+        "genres": ["string"],  /*genres list size is capped at 6*/ 
+        "average_rating": "integer"
+    }
+]
+```
+### New Entry - `/catalog/movies` (POST)
+Creates a new movie entry <br />
+
+**Request**:
+
+```json
+{
+        "name": "string",
+        "director": "string",
+        "release_year": "integer",
+        "genres": ["string"],  /*genres list size is capped at 6*/ 
+        "average_rating": "integer"
+}
+```
+**Response**:
+
+```json
+{
+  "movie_id": "integer"
+}
+```
+
 # Taran
 3) As a user I want to rate movies as I like them or don’t like them, so that i can get recommendations of what other movies I might like   (rate movies)
 
