@@ -123,7 +123,7 @@ Reset a given users recommendations defaulting to most popular <br />
 }
 ```
 
-### Delete Recommendation - `/recommend/{user_id}/delete/{movie_id}` (GET)
+### Delete Recommendation - `/recommend/{user_id}/delete/{movie_id}` (POST)
 Removes a specific movie from the recommendation list of a user <br />
 
 **Request**:
@@ -143,7 +143,7 @@ Removes a specific movie from the recommendation list of a user <br />
 }
 ```
 
-### Generate Recommendation - `/recommend/{user_id}/generate` (GET)
+### Generate Recommendation - `/recommend/{user_id}/generate` (POST)
 Finds more movies to recommend to a user <br />
 
 **Request**:
