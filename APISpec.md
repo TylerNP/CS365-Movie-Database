@@ -79,6 +79,97 @@ Creates a new movie entry <br />
 }
 ```
 
+## Recommendations
+### Get Recommendations - `/recommend/{user_id}` (GET)
+Creates a reocmmendation list based off user prefences (likes/dislikes) <br />
+
+**Request**:
+
+```json
+{
+        "user_id": "integer"
+}
+```
+**Response**:
+
+```json
+[
+    {
+        "movie_id": "integer",
+        "name": "string",
+        "director": "string",
+        "release_year": "integer",
+        "genres": ["string"],  /*genres list size is capped at 6*/ 
+        "average_rating": "integer"
+    }
+]
+```
+
+### Reset Recommendations - `/recommend/{user_id}/reset` (POST)
+Reset a given users recommendations defaulting to most popular <br />
+
+**Request**:
+
+```json
+{
+        "user_id": "integer"
+}
+```
+
+**Response**:
+```json
+{
+        "success": "boolean"
+}
+```
+
+### Delete Recommendation - `/recommend/{user_id}/delete/{movie_id}` (GET)
+Removes a specific movie from the recommendation list of a user <br />
+
+**Request**:
+
+```json
+{
+        "user_id": "integer",
+        "movie_id": "integer"
+}
+```
+
+**Response**:
+
+```json
+{
+        "success": "boolean"
+}
+```
+
+### Generate Recommendation - `/recommend/{user_id}/generate` (GET)
+Finds more movies to recommend to a user <br />
+
+**Request**:
+
+```json
+{
+        "user_id": "integer"
+}
+```
+
+**Response**:
+
+```json
+[
+    {
+        "movie_id": "integer",
+        "name": "string",
+        "director": "string",
+        "release_year": "integer",
+        "genres": ["string"],  /*genres list size is capped at 6*/ 
+        "average_rating": "integer"
+    }
+]
+```
+
+
 # Taran
 3) As a user I want to rate movies as I like them or don’t like them, so that i can get recommendations of what other movies I might like   (rate movies)
 
