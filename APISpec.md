@@ -39,6 +39,31 @@ Login existing user. <br />
 }
 ```
 
+### `/users/{id}/list/` (GET)
+Retrieves user's list of movies <br />
+
+**Request**:
+
+```json
+{
+  "user_id": "integer" 
+}
+```
+**Response**:
+
+```json
+[
+    {
+        "movie_id": "integer",
+        "name": "string",
+        "director": "string",
+        "release_year": "integer",
+        "genres": ["string"],  /*genres list size is capped at 6*/ 
+        "average_rating": "integer"
+    }
+]
+```
+
 ### `/users/{id}/list/{movie_id}/rate/}` (POST)
 Rate a movie. <br />
 
@@ -76,6 +101,7 @@ Retrieves the catalog of movies. Each movie will only have one unique entry. <br
     }
 ]
 ```
+
 ### New Entry - `/catalog/movies` (POST)
 Creates a new movie entry <br />
 
