@@ -1,13 +1,5 @@
 ### Example Flows
 
-
-Alice the Oathbreaker Paladin comes to our potion shop because she is in desperate need of both a red healing potion and a blue mana potion after her battle with a powerful dragon. First, Alice requests a catalog to see the latest offerings available at the shop by calling GET /catalog. Alice sees in the catalog that there are 8 red potions available with SKU "RED_POTION" at a reasonable price of 50 gold. There are also 6 blue potions available with SKU "BLUE_POTION" at a price of 55 gold each.
-
-Alice then initiates a purchase of 3 of the red potions and 1 of the blue potions. To do so she:
-
-
-
-
 #### ALREADY WATCHED A MOVIE
 ##### Already watched from recommended movies
 Rupinder Singh logs in by making a POST request to `/users/login`. Rupinder then gets recommended a movie he as already watched, "Rupinder Gandhi 2: The Robinhood". He decideds to rate the movie a 10 out of 10 with a POST request to `/users/{id}/list/{movie_id}/rate` and then makes a POST request to `/users/{id}/list/{movie_id}/watched` with that movie's id in the request URL. 
