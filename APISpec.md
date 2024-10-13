@@ -246,46 +246,6 @@ Finds more movies to recommend to a user <br />
 
 
 
-# Endpoints
-1. Movies
-1.1 Get Movie Info (generic info)
-1.1. Get Random Movie
-
-
-2. Users
-2.1 Rate user
-
-
-
-<<<<<<< HEAD
-# 3 stories 
-
-# Taran
-3) As a user I want to rate movies as I like them or don’t like them, so that i can get recommendations of what other movies I might like   (rate movies)
-
-=======
-5) “As a user of (name of our project), I want to determine which upcoming movies will do well based on the movies I’ve liked. I’m a college student so time and money are limited and I’d want to pick the best possible choice.” (give rec. based on liked and not liked movies)
-GET collabs /recommend/collabs
-
-    Provides a list of movies that both an actor and director have worked on together. The call passes in two strings, the actor name and director name. Returns a list of movies that actor director has worked on together
-
-Request: 
-    [
-        {
-            'director' = 'string'
-            'actors' = 'string'
-        }
-    ]
-
-Respose:  a list of movie collabs between an actor and director
-    [
-        {
-            'movie' = 'string'
-        }
-    ]
->>>>>>> e212bfdc49d151c0f1684bf10abfb2192b16460b
-
-
 
 ### Generate Recommendation based on collaborations - `/recommend/{user_id}/collab` (POST)
 Provides a list of movies that both an actor and director have worked on together. The call passes in two strings, the actor name and director name. Returns a list of movies that actor director has worked on together <br />
@@ -388,3 +348,16 @@ Gives a list of movies that are available in certain subscription services or if
 
 1. Get Random Movie Endpoint 
 2. Post Rate Movie (0-10) (weight above a 5 is yes, below is no) # log movie into it 
+
+
+
+
+# Scratch Work 
+## Endpoints
+1. Movies
+1.1 Get Movie Info (generic info)
+1.1. Get Random Movie
+
+
+2. Users
+2.1 Rate user
