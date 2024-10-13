@@ -2,8 +2,10 @@
 
 #### ALREADY WATCHED A MOVIE
 ##### Already watched from recommended movies
-Rupinder Singh gets recommended a movie he as already watched. He decideds to rate the movie with a POST request to `/users/{id}/list/{movie_id}/rate` and then a POST request to `/users/{id}/list/{movie_id}/watched`
-Jake is a a new user who wants to get a list of movies to look through. He is a new user, so He will call 
+Rupinder Singh logs in by making a POST request to `/users/login`. Rupinder then gets recommended a movie he as already watched. He decideds to rate the movie with a POST request to `/users/{id}/list/{movie_id}/rate` and then makes a POST request to `/users/{id}/list/{movie_id}/watched` with that movie in the request. 
+
+#### GET A MOVIE TO WATCH TODAY
+Rakesh had a long day and wants to watch a movie. He is too tired to think of a movie. Rakesh first logs in by making a POST request to `/users/login`. He then makes a GET request to `/users/{id}/watch` which returns a movie that he has not already watched, but has shown intrest in from past recomendations. Rakesh then deciedes to watch that movie. 
 
 ##### Already watched from watching a movie
 John Smith just watched a new movie in the theatres. He really enjoyed this movie and would like to see similar movies. He goes on (our project) and searches for the movie he just watched. He adds it to his list of liked movies and rates it from 1-10. John then requests to see movies like the one he just likes and rated.
@@ -32,7 +34,4 @@ Kade Cabrera visits our website because she wants to find other movies based off
 
 
 ### To Implement later
-
-#### GET A MOVIE TO WATCH TODAY
-Rakesh had a long day and wants to watch a movie. He is too tired to think of a movie. He makes a GET request to `/users/{id}/watch` which returns a movie that he has not already watched, but has shown intrest in from past recomendations. 
-
+Jake is a a new user who wants to get a list of movies to look through. He is a new user, so He will call 

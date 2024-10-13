@@ -82,6 +82,36 @@ Rate a movie. <br />
 }
 ```
 
+### `/users/{id}/list/{movie_id}/watched` (POST)
+Log a movie as watched . <br />
+
+**Response**:
+
+```json
+{
+  "success": "boolean"
+}
+```
+
+### `/users/{id}/watch` (GET)
+Get movies you haven't watched yet but have shown intrest in <br />
+
+**Response**:
+
+```json
+[
+    {
+        "movie_id": "integer",
+        "name": "string",
+        "director": "string",
+        "release_year": "integer",
+        "genres": ["string"],  /*genres list size is capped at 6*/ 
+        "average_rating": "integer"
+    }
+]
+```
+
+
 
 ## Catalog
 ### Get Catalog - `/catalog` (GET)
