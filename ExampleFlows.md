@@ -1,11 +1,29 @@
 ### Example Flows
 
+
+Alice the Oathbreaker Paladin comes to our potion shop because she is in desperate need of both a red healing potion and a blue mana potion after her battle with a powerful dragon. First, Alice requests a catalog to see the latest offerings available at the shop by calling GET /catalog. Alice sees in the catalog that there are 8 red potions available with SKU "RED_POTION" at a reasonable price of 50 gold. There are also 6 blue potions available with SKU "BLUE_POTION" at a price of 55 gold each.
+
+Alice then initiates a purchase of 3 of the red potions and 1 of the blue potions. To do so she:
+
+
+
+
 #### ALREADY WATCHED A MOVIE
 ##### Already watched from recommended movies
-Rupinder Singh logs in by making a POST request to `/users/login`. Rupinder then gets recommended a movie he as already watched. He decideds to rate the movie with a POST request to `/users/{id}/list/{movie_id}/rate` and then makes a POST request to `/users/{id}/list/{movie_id}/watched` with that movie in the request. 
+Rupinder Singh logs in by making a POST request to `/users/login`. Rupinder then gets recommended a movie he as already watched, "Rupinder Gandhi 2: The Robinhood". He decideds to rate the movie a 10 out of 10 with a POST request to `/users/{id}/list/{movie_id}/rate` and then makes a POST request to `/users/{id}/list/{movie_id}/watched` with that movie's id in the request URL. 
+
+Rupinder starts by calling POST `/users/login` to log in.
+Then Rupinder calls GET `/recommend/{user_id}` to get his recommended movies
+Rupinder calls POST `/users/{id}/list/{movie_id}/rate`  with the movie he has already seen.
+Finally, he then makes call to POST `/users/{id}/list/{movie_id}/watched`, where the movie_id is the id of the movie he has seen"
+
 
 #### GET A MOVIE TO WATCH TODAY
 Rakesh had a long day and wants to watch a movie. He is too tired to think of a movie. Rakesh first logs in by making a POST request to `/users/login`. He then makes a GET request to `/users/{id}/watch` which returns a movie that he has not already watched, but has shown intrest in from past recomendations. Rakesh then deciedes to watch that movie. 
+
+Rakesh starts by calling POST `/users/login` to log in.
+He then makes a GET request to `/users/{id}/watch` where he is given a movie to watch
+Rakesh then enjoys the rest of his day by watching the new movie
 
 ##### Already watched from watching a movie
 John Smith just watched a new movie in the theatres. He really enjoyed this movie and would like to see similar movies. He goes on (our project) and searches for the movie he just watched. He adds it to his list of liked movies and rates it from 1-10. John then requests to see movies like the one he just likes and rated.
