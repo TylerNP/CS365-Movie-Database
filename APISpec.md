@@ -70,6 +70,24 @@ Gives a list of movies that are available with a certain subscription services o
 ]
 ```
 
+### `/movies/user/{user_id}/` (GET)
+Get movies you haven't watched yet but have shown intrest in <br />
+
+**Response**:
+
+```json
+[
+  {
+    "movie_id": "integer",
+    "name": "string",
+    "director": "string",
+    "release_year": "integer",
+    "genres": ["string"],  /*genres list size is capped at 6*/ 
+    "average_rating": "integer"
+  }
+]
+```
+
 ## 2. Users
 ### 2.1 User Signup - `/users/signup/` (POST)
 Create new user. <br />
@@ -162,27 +180,6 @@ Log a movie as watched or not. <br />
 {
   "success": "boolean"
 }
-```
-
-===
-SHOULD BE DISCUSSED LATER
-===
-### `/users/{user_id}/watch` (GET)
-Get movies you haven't watched yet but have shown intrest in <br />
-
-**Response**:
-
-```json
-[
-  {
-    "movie_id": "integer",
-    "name": "string",
-    "director": "string",
-    "release_year": "integer",
-    "genres": ["string"],  /*genres list size is capped at 6*/ 
-    "average_rating": "integer"
-  }
-]
 ```
 
 ## 3. Catalog
