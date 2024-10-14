@@ -70,7 +70,7 @@ Gives a list of movies that are available with a certain subscription services o
 ]
 ```
 
-### `/movies/user/{user_id}/` (GET)
+### 1.4 Get Movie You're Interested In `/movies/user/{user_id}/` (GET)
 Get movies you haven't watched yet but have shown intrest in <br />
 
 **Response**:
