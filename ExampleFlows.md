@@ -37,7 +37,10 @@ Jake is very bored and wants to try something differnt from his usual movie tast
 
 
 #### RECOMMENDATION FEATURE
-Kade Cabrera visits our website because she wants to find other movies based off of her likes and dislikes. First, Kade requests the catalog of movies she has watched with `/catalog/movies`. Kade rates movie, A, on her account with a POST request to `/users/{id}/list/{movie_id}/rate/` with a like and movie, B, with disklike. Kade then receives recommendations with a GET `/recommend/{id}`
+Kade Cabrera visits our website because she wants to find other movies based off of her likes and dislikes. 
+First, Kade requests the catalog of movies to find what she has watched with `/catalog/movies`. 
+Kade rates movie, A, on her account with a POST request to `/users/{id}/list/{movie_id}/rate/` with a like and movie, B, with disklike. 
+Kade then receives recommendations with a GET `/recommend/{id}`
     
 
 
