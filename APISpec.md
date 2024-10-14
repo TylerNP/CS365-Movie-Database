@@ -64,7 +64,7 @@ Retrieves user's list of movies <br />
 ]
 ```
 
-### `/users/{id}/list/{movie_id}/rate/}` (POST)
+### `/users/{id}/rate/{movie_id}/{rating}/}` (POST)
 Rate a movie. <br />
 
 **Request**:
@@ -82,7 +82,7 @@ Rate a movie. <br />
 }
 ```
 
-### `/users/{id}/list/{movie_id}/watched` (POST)
+### `/users/{id}/watched/{movie_id}` (POST)
 Log a movie as watched . <br />
 
 **Request**:
@@ -100,6 +100,9 @@ Log a movie as watched . <br />
 }
 ```
 
+==========================================
+SHOULD GET CHANGED DOESNT FIT ITS PURPOSE
+==========================================
 ### `/users/{id}/watch` (GET)
 Get movies you haven't watched yet but have shown intrest in <br />
 
@@ -160,6 +163,35 @@ Creates a new movie entry <br />
   "movie_id": "integer"
 }
 ```
+### Find Specific Movies - `/catalog/search, tags=["SEARCH"]` (GET)
+Searches for movies based off querry parameters <br />
+
+**Querry Parameters**:
+
+- `movie_name`(optional): The name of the movie
+- `genre`(optional): The genre of the movie
+- `director`(optional): The director of the movie
+- `actor`(optional): The actors in the movie
+- `year`(optional): The release year of the movie
+- `rating`(optional): The average rating of the movie
+- `search_page`(optional): The page number of the results
+- `sort_col`(optional): The column to sort the movies by. Possible values: `movie_name`, `genre`, `director`, `actor`, `year`, and `rating`
+- `sort_order`(optional): The order the result appears. Possible values: `asc`(ascending) or `desc`(descending). Default: `asc`
+
+**Response**:
+
+The API responds with a JSON object with the following:
+- `previous`: A string that represents the link to the previous search page if it exists. If no such page exists this string will be empty.
+- `next`: A string that represents the link to the search next page if it exists. If no such page exists this string will be empty. 
+- `results`: An array of objects, each representing a movie item. Each movie item has the following properties:
+  - `movie_id`: An integer that represents the unique identifier of the movie item
+  - `movie_name`: A string that holds the movie name
+  - `movie_director`: A string that holds the director of the movie
+  - `movie_release_year`: An integer holding the year of release of the movie
+  - `movie_genres`: An array of strings storing the genres of the movie
+  - `movie_average_rating`: An integer holding the average rating of the movie
+
+
 
 ## Recommendations
 ### Get Recommendations - `/recommend/{user_id}` (GET)
