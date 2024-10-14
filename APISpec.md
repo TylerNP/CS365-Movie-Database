@@ -1,5 +1,4 @@
-# CSC365 Movie Databases 
-### API Specification
+# API Specification For CSC365 Movie Databases
 
 ## 1. Movies
 ### 1.1 Get Movie Info - `/movies/{movie_id}` (GET)
@@ -587,7 +586,7 @@ Delete a movie entry. <br />
 
 4. Recommend
 
-5. 
+5. Predictions
 
 6. Analytics
 
