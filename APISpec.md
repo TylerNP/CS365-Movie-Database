@@ -2,16 +2,8 @@
 ### API Specification
 
 ## Movies
-### `/movies/{movie_id}` (GET)
+### 1.1 Get Movie Info - `/movies/{movie_id}` (GET)
 Obtain movie information. <br />
-
-**Request**:
-
-```json
-{
-  "movie_id": "integer" /*Unique number representing movies*/
-}
-```
 
 **Response**:
 
@@ -27,7 +19,7 @@ Obtain movie information. <br />
 }
 ```
 
-### New Entry - `/movies/new/` (POST)
+### 1.2 New Entry - `/movies/new/` (POST)
 Creates a new movie entry <br />
 
 **Request**:
@@ -43,6 +35,7 @@ Creates a new movie entry <br />
       "average_rating": "integer"
 }
 ```
+
 **Response**:
 
 ```json
@@ -51,9 +44,8 @@ Creates a new movie entry <br />
 }
 ```
 
-
 ## Users
-### `/users/signup` (POST)
+### 2.1 User Signup - `/users/signup` (POST)
 Create new user. <br />
 
 **Request**:
@@ -71,7 +63,8 @@ Create new user. <br />
   "id": "integer"
 }
 ```
-### `/users/login` (POST)
+
+### 2.2 User Login - `/users/login/{user_id}` (PUT)
 Login existing user. <br />
 
 **Request**:
@@ -86,20 +79,13 @@ Login existing user. <br />
 
 ```json
 {
-  "id": "integer"
+  "user_id": "integer"
 }
 ```
 
-### `/users/{id}/list/` (GET)
+### 2.3 User List `/users/{id}/list/` (GET)
 Retrieves user's list of movies <br />
 
-**Request**:
-
-```json
-{
-  "user_id": "integer" 
-}
-```
 **Response**:
 
 ```json
@@ -129,13 +115,13 @@ Rate a movie. <br />
 ```
 
 ### `/users/{id}/watched/{movie_id}` (POST)
-Log a movie as watched . <br />
+Log a movie as watched or not. <br />
 
 **Request**:
 
 ```json
 {
-  "movie_id": "integer" /*code representating movie*/
+  "watched": "boolean"
 }
 ```
 **Response**:
@@ -166,8 +152,6 @@ Get movies you haven't watched yet but have shown intrest in <br />
 ]
 ```
 
-
-
 ## Catalog
 ### Get Catalog - `/catalog` (GET)
 Retrieves the catalog of movies. Each movie will only have one unique entry. <br />
@@ -177,12 +161,7 @@ Retrieves the catalog of movies. Each movie will only have one unique entry. <br
 ```json
 [
     {
-        "movie_id": "integer",
-        "name": "string",
-        "director": "string",
-        "release_year": "integer",
-        "genres": ["string"],  /*genres list size is capped at 6*/ 
-        "average_rating": "integer"
+        "movie_id": "integer"
     }
 ]
 ```
@@ -215,44 +194,22 @@ The API responds with a JSON object with the following:
   - `movie_genres`: An array of strings storing the genres of the movie
   - `movie_average_rating`: An integer holding the average rating of the movie
 
-
-
 ## Recommendations
 ### Get Recommendations - `/recommend/{user_id}` (GET)
 Creates a reocmmendation list based off user prefences (likes/dislikes) <br />
 
-**Request**:
-
-```json
-{
-        "user_id": "integer"
-}
-```
 **Response**:
 
 ```json
 [
     {
-        "movie_id": "integer",
-        "name": "string",
-        "director": "string",
-        "release_year": "integer",
-        "genres": ["string"],  /*genres list size is capped at 6*/ 
-        "average_rating": "integer"
+        "movie_id": "integer"
     }
 ]
 ```
 
 ### Reset Recommendations - `/recommend/{user_id}/reset` (POST)
 Reset a given users recommendations defaulting to most popular <br />
-
-**Request**:
-
-```json
-{
-        "user_id": "integer"
-}
-```
 
 **Response**:
 ```json
@@ -263,15 +220,6 @@ Reset a given users recommendations defaulting to most popular <br />
 
 ### Delete Recommendation - `/recommend/{user_id}/delete/{movie_id}` (POST)
 Removes a specific movie from the recommendation list of a user <br />
-
-**Request**:
-
-```json
-{
-        "user_id": "integer",
-        "movie_id": "integer"
-}
-```
 
 **Response**:
 
@@ -284,31 +232,15 @@ Removes a specific movie from the recommendation list of a user <br />
 ### Generate Recommendation - `/recommend/{user_id}/generate` (POST)
 Finds more movies to recommend to a user <br />
 
-**Request**:
-
-```json
-{
-        "user_id": "integer"
-}
-```
-
 **Response**:
 
 ```json
 [
     {
-        "movie_id": "integer",
-        "name": "string",
-        "director": "string",
-        "release_year": "integer",
-        "genres": ["string"],  /*genres list size is capped at 6*/ 
-        "average_rating": "integer"
+        "movie_id": "integer"
     }
 ]
 ```
-
-
-
 
 ### Generate Recommendation based on collaborations - `/recommend/{user_id}/collab` (POST)
 Provides a list of movies that both an actor and director have worked on together. The call passes in two strings, the actor name and director name. Returns a list of movies that actor director has worked on together <br />
@@ -317,7 +249,6 @@ Provides a list of movies that both an actor and director have worked on togethe
 
 ```json
 {
-        "user_id": "integer",
         "actor" : "string",
         "director" : "string"
 }
@@ -328,18 +259,12 @@ Provides a list of movies that both an actor and director have worked on togethe
 ```json
 [
     {
-        "movie_id": "integer",
-        "name": "string",
-        "director": "string",
-        "actor" : "string",
-        "release_year": "integer",
-        "genres": ["string"],  
-        "average_rating": "integer"
+        "movie_id": "integer"
     }
 ]
 ```
 
-
+//SPLIT//
 
 ### GET analytics  - `/recommend/{user_id}/analytics` (POST)
 Based on input, provides a list of movies that are doing well and what their budget - earnings are, audience rating, critic rating and demographic 
