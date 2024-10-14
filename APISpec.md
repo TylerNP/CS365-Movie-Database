@@ -1,7 +1,7 @@
 # CSC365 Movie Databases 
 ### API Specification
 
-## 1 Movies
+## 1. Movies
 ### 1.1 Get Movie Info - `/movies/{movie_id}` (GET)
 Obtain movie information. <br />
 
@@ -71,7 +71,7 @@ Gives a list of movies that are available with a certain subscription services o
 ]
 ```
 
-## 2 Users
+## 2. Users
 ### 2.1 User Signup - `/users/signup/` (POST)
 Create new user. <br />
 
@@ -186,7 +186,7 @@ Get movies you haven't watched yet but have shown intrest in <br />
 ]
 ```
 
-## 3 Catalog
+## 3. Catalog
 ### 3.1 Get Catalog - `/catalog/` (GET)
 Retrieves the catalog of movies. Each movie will only have one unique entry. <br />
 
@@ -234,7 +234,7 @@ The API responds with a JSON object with the following:
   - `movie_genres`: An array of strings storing the genres of the movie
   - `movie_average_rating`: An integer holding the average rating of the movie
 
-## 4 Recommendations
+## 4. Recommendations
 ### 4.1 Get Recommendations - `/recommend/{user_id}` (GET)
 Creates a reocmmendation list based off user prefences (likes/dislikes) <br />
 
@@ -322,7 +322,7 @@ Provides a list of movies that both an actor and director have worked on togethe
 ]
 ```
 
-## 5 ANALYTICS
+## 5. Analytics
 ### 5.1 Get Analytics - `/analytics/{movie_id}` (GET)
 Get the performance data of a movie <br />
 
@@ -412,8 +412,8 @@ The API responds with a JSON object with the following:
   - `box-office`: An integer representing the performance of the movie in the box-office
   - `demographic`: A string that represents the demographics viewing the movie
 
-## 6 PREDICTIONS
-### 6.1 Get Prediction - `/prediction/{movie_id}` (GET)
+## 6. Predictions
+### 6.1 Get Prediction - `/predictions/{movie_id}` (GET)
 Gets information about a prediction of a movie performance in respect with the box-office and viewing demographics. <br />
 
 **Response**:
@@ -426,7 +426,7 @@ Gets information about a prediction of a movie performance in respect with the b
 }
 ```
 
-### 6.2 Generate Prediction - `/prediction/generate/` (POST)
+### 6.2 Generate Prediction - `/predictions/generate/` (POST)
 Attempts to predict the movie performance in the box-office and with specific demographics. <br />
 
 **Request**:
@@ -445,7 +445,7 @@ Attempts to predict the movie performance in the box-office and with specific de
 }
 ```
 
-## 7 GROUP
+## 7. Groups
 ### 7.1 Get Group - `/groups/{group_id}` (GET)
 Get information about a group. <br />
 
@@ -546,7 +546,7 @@ Shows all groups available. <br />
 ]
 ```
 
-## 8 ADMIN
+## 8. Admin
 ### 8.1 Delete Movie - `/admin/movies/delete/` (POST)
 Delete a movie entry. <br />
 
