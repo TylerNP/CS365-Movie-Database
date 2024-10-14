@@ -9,13 +9,13 @@ Obtain movie information. <br />
 
 ```json
 {
-      "movie_id": "integer",
-      "name": "string",
-      "director": "string",
-      "actors": ["string"], /*List of actors in major roles*/
-      "release_year": "integer",
-      "genres": ["string"],  /*genres list size is capped at 6*/ 
-      "average_rating": "integer"
+  "movie_id": "integer",
+  "name": "string",
+  "director": "string",
+  "actors": ["string"], /*List of actors in major roles*/
+  "release_year": "integer",
+  "genres": ["string"],  /*genres list size is capped at 6*/ 
+  "average_rating": "integer"
 }
 ```
 
@@ -26,13 +26,13 @@ Creates a new movie entry <br />
 
 ```json
 {
-      "movie_id": "integer",
-      "name": "string",
-      "director": "string",
-      "actors": ["string"], /*List of actors in major roles*/
-      "release_year": "integer",
-      "genres": ["string"],  /*genres list size is capped at 6*/ 
-      "average_rating": "integer"
+  "movie_id": "integer",
+  "name": "string",
+  "director": "string",
+  "actors": ["string"], /*List of actors in major roles*/
+  "release_year": "integer",
+  "genres": ["string"],  /*genres list size is capped at 6*/ 
+  "average_rating": "integer"
 }
 ```
 
@@ -44,15 +44,14 @@ Creates a new movie entry <br />
 }
 ```
 
-### 1.3 Get Movie Availabile - `/movies/availabile` (GET)
+### 1.3 Get Movie Availabile - `/movies/availabile/` (GET)
 Gives a list of movies that are available with a certain subscription services or if free online <br />
 
 **Request**:
 
 ```json
 {
-        "subscription": "string",
-        
+  "subscription": "string",
 }
 ```
 
@@ -60,21 +59,27 @@ Gives a list of movies that are available with a certain subscription services o
 
 ```json
 [
-    {
-        "movie_id": "integer",
-    }
+  {
+    "movie_id": "integer",
+    "name": "string",
+    "director": "string",
+    "actors": ["string"], /*List of actors in major roles*/
+    "release_year": "integer",
+    "genres": ["string"],  /*genres list size is capped at 6*/ 
+    "average_rating": "integer"
+  }
 ]
 ```
 
 ## Users
-### 2.1 User Signup - `/users/signup` (POST)
+### 2.1 User Signup - `/users/signup/` (POST)
 Create new user. <br />
 
 **Request**:
 
 ```json
 {
-  "name": "string",
+  "username": "string",
   "password": "string" 
 }
 ```
@@ -82,7 +87,7 @@ Create new user. <br />
 
 ```json
 {
-  "id": "integer"
+  "user_id": "integer"
 }
 ```
 
@@ -93,7 +98,7 @@ Login existing user. <br />
 
 ```json
 {
-  "name": "string",
+  "username": "string",
   "password": "string"
 }
 ```
@@ -105,20 +110,26 @@ Login existing user. <br />
 }
 ```
 
-### 2.3 User List `/users/{id}/list/` (GET)
+### 2.3 User List `/users/{user_id}/list/` (GET)
 Retrieves user's list of movies <br />
 
 **Response**:
 
 ```json
 [
-    {
-        "movie_id": "integer"
-    }
+  {
+    "movie_id": "integer",
+    "name": "string",
+    "director": "string",
+    "actors": ["string"], /*List of actors in major roles*/
+    "release_year": "integer",
+    "genres": ["string"],  /*genres list size is capped at 6*/ 
+    "average_rating": "integer"
+  }
 ]
 ```
 
-### 2.4 Rate Movie - `/users/{id}/rate/{movie_id}/` (POST)
+### 2.4 Rate Movie - `/users/{user_id}/rate/{movie_id}` (POST)
 Rate a movie. <br />
 
 **Request**:
@@ -136,7 +147,7 @@ Rate a movie. <br />
 }
 ```
 
-### 2.5 Watched Movie - `/users/{id}/watched/{movie_id}` (POST)
+### 2.5 Watched Movie - `/users/{user_id}/watched/{movie_id}` (POST)
 Log a movie as watched or not. <br />
 
 **Request**:
@@ -156,35 +167,41 @@ Log a movie as watched or not. <br />
 
 ==========================================
 SHOULD GET CHANGED/MOVED DOESNT FIT PURPOSE OF USERS
-### `/users/{id}/watch` (GET)
+### `/users/{user_id}/watch` (GET)
 Get movies you haven't watched yet but have shown intrest in <br />
 
 **Response**:
 
 ```json
 [
-    {
-        "movie_id": "integer",
-        "name": "string",
-        "director": "string",
-        "release_year": "integer",
-        "genres": ["string"],  /*genres list size is capped at 6*/ 
-        "average_rating": "integer"
-    }
+  {
+    "movie_id": "integer",
+    "name": "string",
+    "director": "string",
+    "release_year": "integer",
+    "genres": ["string"],  /*genres list size is capped at 6*/ 
+    "average_rating": "integer"
+  }
 ]
 ```
 
 ## Catalog
-### 3.1 Get Catalog - `/catalog` (GET)
+### 3.1 Get Catalog - `/catalog/` (GET)
 Retrieves the catalog of movies. Each movie will only have one unique entry. <br />
 
 **Response**:
 
 ```json
 [
-    {
-        "movie_id": "integer"
-    }
+  {
+    "movie_id": "integer",
+    "name": "string",
+    "director": "string",
+    "actors": ["string"], /*List of actors in major roles*/
+    "release_year": "integer",
+    "genres": ["string"],  /*genres list size is capped at 6*/ 
+    "average_rating": "integer"
+  }
 ]
 ```
 
@@ -224,19 +241,25 @@ Creates a reocmmendation list based off user prefences (likes/dislikes) <br />
 
 ```json
 [
-    {
-        "movie_id": "integer"
-    }
+  {
+    "movie_id": "integer",
+    "name": "string",
+    "director": "string",
+    "actors": ["string"], /*List of actors in major roles*/
+    "release_year": "integer",
+    "genres": ["string"],  /*genres list size is capped at 6*/ 
+    "average_rating": "integer"
+  }
 ]
 ```
 
-### 4.2 Reset Recommendations - `/recommend/{user_id}/reset` (POST)
+### 4.2 Reset Recommendations - `/recommend/{user_id}/reset/` (POST)
 Reset a given users recommendations defaulting to most popular <br />
 
 **Response**:
 ```json
 {
-        "success": "boolean"
+  "success": "boolean"
 }
 ```
 
@@ -247,32 +270,38 @@ Removes a specific movie from the recommendation list of a user <br />
 
 ```json
 {
-        "success": "boolean"
+  "success": "boolean"
 }
 ```
 
-### 4.4 Generate Recommendation - `/recommend/{user_id}/generate` (POST)
+### 4.4 Generate Recommendation - `/recommend/{user_id}/generate/` (POST)
 Finds more movies to recommend to a user <br />
 
 **Response**:
 
 ```json
 [
-    {
-        "movie_id": "integer"
-    }
+  {
+    "movie_id": "integer",
+    "name": "string",
+    "director": "string",
+    "actors": ["string"], /*List of actors in major roles*/
+    "release_year": "integer",
+    "genres": ["string"],  /*genres list size is capped at 6*/ 
+    "average_rating": "integer"
+  }
 ]
 ```
 
-### 4.5 Generate Recommendation based on collaborations - `/recommend/{user_id}/collab` (POST)
+### 4.5 Generate Recommendation based on collaborations - `/recommend/{user_id}/collab/` (POST)
 Provides a list of movies that both an actor and director have worked on together. The call passes in two strings, the actor name and director name. Returns a list of movies that actor director has worked on together <br />
 
 **Request**:
 
 ```json
 {
-        "actor" : "string",
-        "director" : "string"
+  "actor" : "string",
+  "director" : "string"
 }
 ```
 
@@ -280,9 +309,15 @@ Provides a list of movies that both an actor and director have worked on togethe
 
 ```json
 [
-    {
-        "movie_id": "integer"
-    }
+  {
+    "movie_id": "integer",
+    "name": "string",
+    "director": "string",
+    "actors": ["string"], /*List of actors in major roles*/
+    "release_year": "integer",
+    "genres": ["string"],  /*genres list size is capped at 6*/ 
+    "average_rating": "integer"
+  }
 ]
 ```
 
@@ -294,17 +329,18 @@ Get the performance data of a movie <br />
 
 ```json
 [
-    {
-        "movie_id": "integer",
-        "name": "string",
-        "director": "string",
-        "release_year": "integer",
-        "genres": ["string"],  
-        "average_rating": "integer",
-        "budget": "integer",
-        "box-office": "integer",
-        "demographic": "string"
-    }
+  {
+    "movie_id": "integer",
+    "name": "string",
+    "director": "string",
+    "actors": ["string"], /*List of actors in major roles*/
+    "release_year": "integer",
+    "genres": ["string"],  
+    "average_rating": "integer",
+    "budget": "integer",
+    "box-office": "integer",
+    "demographic": "string"
+  }
 ]
 ```
 
@@ -315,38 +351,40 @@ Based on genre, provides a list of movies that are doing well and what their bud
 
 ```json
 [
-    {
-        "movie_id": "integer",
-        "name": "string",
-        "director": "string",
-        "release_year": "integer",
-        "genres": ["string"],  
-        "average_rating": "integer",
-        "budget": "integer",
-        "box-office": "integer",
-        "demographic": "string"
-    }
+  {
+    "movie_id": "integer",
+    "name": "string",
+    "director": "string",
+    "actors": ["string"], /*List of actors in major roles*/
+    "release_year": "integer",
+    "genres": ["string"],  
+    "average_rating": "integer",
+    "budget": "integer",
+    "box-office": "integer",
+    "demographic": "string"
+  }
 ]
 ```
 
-## 5.3 Get Analytics Popular - `/analytics/popular` (GET)
+## 5.3 Get Analytics Popular - `/analytics/popular/` (GET)
 Provides a list of the highest performing movies with respect to user reviews and box-office performance <br />
 
 **Response**:
 
 ```json
 [
-    {
-        "movie_id": "integer",
-        "name": "string",
-        "director": "string",
-        "release_year": "integer",
-        "genres": ["string"],  
-        "average_rating": "integer",
-        "budget": "integer",
-        "box-office": "integer",
-        "demographic": "string"
-    }
+  {
+    "movie_id": "integer",
+    "name": "string",
+    "director": "string",
+    "actors": ["string"], /*List of actors in major roles*/
+    "release_year": "integer",
+    "genres": ["string"],  
+    "average_rating": "integer",
+    "budget": "integer",
+    "box-office": "integer",
+    "demographic": "string"
+  }
 ]
 ```
 
@@ -374,48 +412,158 @@ The API responds with a JSON object with the following:
   - `demographic`: A string that represents the demographics viewing the movie
 
 ## PREDICTIONS
-### 6.1 Get Prediction - `/prediction/{movie_id}`
-Attempts to predict the movie performance in the box-office and with specific demographics. <br />
+### 6.1 Get Prediction - `/prediction/{movie_id}` (GET)
+Gets information about a prediction of a movie performance in respect with the box-office and viewing demographics. <br />
 
 **Response**:
 
 ```json
-[
-    {
-        "predicted_rating": "integer",
-        "box-office": "integer",
-        "viewing_demographics": ["string"]
-    }
-]
+{
+  "predicted_rating": "integer",
+  "box-office": "integer",
+  "viewing_demographics": ["string"]
+}
+```
+
+### 6.2 Generate Prediction - `/prediction/generate/` (POST)
+Attempts to predict the movie performance in the box-office and with specific demographics. <br />
+
+**Request**:
+
+```json
+{
+  "movie_id": "integer"
+}
+```
+
+**Response**:
+
+```json
+{
+  "success": "boolean"
+}
 ```
 
 ## GROUP
-### 7.1 Create Group - `/groups/{group_id}` (PUT)
+### 7.1 Get Group - `/groups/{group_id}` (GET)
+Get information about a group. <br />
+
+**Response**:
+
+```json
+{
+  "group_name": "string",
+  "group_desciprtion": "string",
+  "group_interests": ["string"]
+}
+```
+
+### 7.2 Create Group - `/groups/{group_id}` (PUT)
 Create a new group for users to join. <br />
 
 **Request**:
 
 ```json
-[
-    {
-        "group_name": "string",
-        "group_desciprtion": "string",
-        "group_interests": ["string"]
-    }
-]
+{
+  "group_name": "string",
+  "group_desciprtion": "string",
+  "group_interests": ["string"]
+}
 ```
+
+**Response**:
+
+```json
+{
+  "group_id": "integer" /*Unique number that identifies a group*/
+}
+```
+
+### 7.3 Join group - `/groups/{group_id}/join/` (POST)
+Add an user to a specific group. <br />
+
+**Request**:
+
+```json
+{
+  "user_id": "integer"
+}
+```
+
+**Response**:
+
+```json
+{
+  "success": "boolean"
+}
+```
+
+### 7.4 Remove User From Group - `/groups/{group_id}/remove/` (POST)
+Remove an user from the group. <br />
+
+**Request**:
+
+```json
+{
+  "user_id": "integer"
+}
+```
+
+**Response**:
+
+```json
+{
+  "success": "boolean"
+}
+```
+
+### 7.5 Delete Group - `/groups/{group_id}` (PUT)
+Delete a group. <br />
 
 **Response**:
 
 ```json
 
 {
-    "group_id": "integer" /*Unique number that identify a group*/
+    "success": "boolean"
 }
 
 ```
 
+### 7.6 List Groups - `/groups/list/` (GET)
+Shows all groups available. <br />
+
+**Response**:
+
+```json
+[
+  {
+    "group_name": "string",
+    "group_desciprtion": "string",
+    "group_interests": ["string"]
+  }
+]
+```
+
 ## ADMIN
+### 8.1 Delete Movie - `/admin/movies/delete/` (POST)
+Delete a movie entry. <br />
+
+**Request**:
+
+```json
+{
+  "movie_id": "integer"
+}
+```
+
+**Response**:
+
+```json
+{
+  "success": "boolean"
+}
+```
 
 
 
