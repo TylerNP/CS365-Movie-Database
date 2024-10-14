@@ -1,6 +1,57 @@
 # CSC365 Movie Databases 
 ### API Specification
 
+## Movies
+### `/movies/{movie_id}` (GET)
+Obtain movie information. <br />
+
+**Request**:
+
+```json
+{
+  "movie_id": "integer" /*Unique number representing movies*/
+}
+```
+
+**Response**:
+
+```json
+{
+      "movie_id": "integer",
+      "name": "string",
+      "director": "string",
+      "actors": ["string"], /*List of actors in major roles*/
+      "release_year": "integer",
+      "genres": ["string"],  /*genres list size is capped at 6*/ 
+      "average_rating": "integer"
+}
+```
+
+### New Entry - `/movies/new/` (POST)
+Creates a new movie entry <br />
+
+**Request**:
+
+```json
+{
+      "movie_id": "integer",
+      "name": "string",
+      "director": "string",
+      "actors": ["string"], /*List of actors in major roles*/
+      "release_year": "integer",
+      "genres": ["string"],  /*genres list size is capped at 6*/ 
+      "average_rating": "integer"
+}
+```
+**Response**:
+
+```json
+{
+  "movie_id": "integer"
+}
+```
+
+
 ## Users
 ### `/users/signup` (POST)
 Create new user. <br />
@@ -54,17 +105,12 @@ Retrieves user's list of movies <br />
 ```json
 [
     {
-        "movie_id": "integer",
-        "name": "string",
-        "director": "string",
-        "release_year": "integer",
-        "genres": ["string"],  /*genres list size is capped at 6*/ 
-        "average_rating": "integer"
+        "movie_id": "integer"
     }
 ]
 ```
 
-### `/users/{id}/rate/{movie_id}/{rating}/}` (POST)
+### `/users/{id}/rate/{movie_id}/` (POST)
 Rate a movie. <br />
 
 **Request**:
@@ -101,8 +147,7 @@ Log a movie as watched . <br />
 ```
 
 ==========================================
-SHOULD GET CHANGED DOESNT FIT ITS PURPOSE
-==========================================
+SHOULD GET CHANGED/MOVED DOESNT FIT PURPOSE OF USERS
 ### `/users/{id}/watch` (GET)
 Get movies you haven't watched yet but have shown intrest in <br />
 
@@ -142,27 +187,6 @@ Retrieves the catalog of movies. Each movie will only have one unique entry. <br
 ]
 ```
 
-### New Entry - `/catalog/movies` (POST)
-Creates a new movie entry <br />
-
-**Request**:
-
-```json
-{
-        "name": "string",
-        "director": "string",
-        "release_year": "integer",
-        "genres": ["string"],  /*genres list size is capped at 6*/ 
-        "average_rating": "integer"
-}
-```
-**Response**:
-
-```json
-{
-  "movie_id": "integer"
-}
-```
 ### Find Specific Movies - `/catalog/search, tags=["SEARCH"]` (GET)
 Searches for movies based off querry parameters <br />
 
