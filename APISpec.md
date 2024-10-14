@@ -85,6 +85,13 @@ Rate a movie. <br />
 ### `/users/{id}/list/{movie_id}/watched` (POST)
 Log a movie as watched . <br />
 
+**Request**:
+
+```json
+{
+  "movie_id": "integer" /*code representating movie*/
+}
+```
 **Response**:
 
 ```json
@@ -358,6 +365,17 @@ Gives a list of movies that are available in certain subscription services or if
 1.1 Get Movie Info (generic info)
 1.1. Get Random Movie
 
-
 2. Users
 2.1 Rate user
+
+3. Catalog
+
+4. Recommend
+
+5. Watched
+
+6. Analytics
+
+7. Group
+
+8. Admin
