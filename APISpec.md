@@ -1,4 +1,4 @@
-# API Specification For CSC365 Movie Database
+# API Specification For CSC365 Movie Database (365mm)
 
 ## 1. Movies
 ### 1.1 Get Movie Info - `/movies/{movie_id}` (GET)
